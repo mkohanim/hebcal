@@ -1,0 +1,82 @@
+[{
+  "name": "get_dates",
+  "description": "Retrieve Jewish holidays and related dates (e.g. Shabbat, Yom Tov, candle lighting/havdalah events) within a given year range, optionally filtered to a specific holiday and/or month range. Use this to look up dates and timing information needed for scheduling home automations around Jewish holidays.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "event_name": {
+        "type": "string",
+        "description": "Optional name of a specific holiday or event to filter for (e.g. 'Passover', 'Yom Kippur', 'Rosh Hashanah', 'Shabbat'). If omitted, all holidays/events in the date range are returned."
+      },
+      "start_year": {
+        "type": "integer",
+        "description": "The Gregorian year to begin the search from (inclusive)."
+      },
+      "end_year": {
+        "type": "integer",
+        "description": "The Gregorian year to end the search at (inclusive)."
+      },
+      "start_month": {
+        "type": "integer",
+        "description": "Optional Gregorian month (1-12) within start_year to begin the search from. If omitted, the search starts from the beginning of start_year.",
+        "minimum": 1,
+        "maximum": 12
+      },
+      "end_month": {
+        "type": "integer",
+        "description": "Optional Gregorian month (1-12) within end_year to end the search at. If omitted, the search runs through the end of end_year.",
+        "minimum": 1,
+        "maximum": 12
+      },
+      "latitude": {
+        "type": "number",
+        "description": "Latitude of where we are. You already have it in the context"
+      },
+     "longitude": {
+        "type": "number",
+        "description": "Longitude of where we are. You already have it in the context"
+      },
+     "tzid": {
+        "type": "string",
+        "description": "Time zone id such as Los Angeles/Americas"
+      }
+    },
+    "required": ["start_year", "end_year"]
+  }
+},
+{
+  "name": "convert_date",
+  "description": "Convert a Gregorian date to its Hebrew calendar equivalent, and optionally project that date's recurring Hebrew-calendar anniversary (e.g. a yahrzeit or birthday) onto Gregorian dates across a range of years. Use this for questions like 'my dad's memorial was June 15 2003, what are the Hebrew dates for it over the next 10 years' -- pass the original Gregorian date plus a start_year/end_year range and get back every occurrence in one call, instead of converting year by year.",
+  "input_schema": {
+    "type": "object",
+    "required": ["original_date"],
+    "properties": {
+      "original_date": {
+        "type": "string",
+        "format": "date",
+        "description": "The known Gregorian date, in YYYY-MM-DD format (e.g. '2003-06-15')."
+      },
+      "start_year": {
+        "type": "integer",
+        "description": "Optional Gregorian year to begin the range. Omit (along with end_year) to just convert 'original_date' itself to its Hebrew equivalent. If provided, must be given together with end_year."
+      },
+      "end_year": {
+        "type": "integer",
+        "description": "Optional Gregorian year to end the range (inclusive). Omit (along with start_year) to just convert 'original_date' itself to its Hebrew equivalent. If provided, must be given together with start_year."
+      },
+      "latitude": {
+        "type": "number",
+        "description": "Optional. Latitude of where we are, used only if sunset-relative day-boundary adjustment is needed (a Hebrew day begins at the prior evening's sunset)."
+      },
+      "longitude": {
+        "type": "number",
+        "description": "Optional. Longitude of where we are, used only if sunset-relative day-boundary adjustment is needed."
+      },
+      "tzid": {
+        "type": "string",
+        "description": "Optional. IANA time zone id, e.g. 'America/Los_Angeles', used only if sunset-relative day-boundary adjustment is needed."
+      }
+    }
+  }
+}
+]

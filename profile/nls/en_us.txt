@@ -1,0 +1,16 @@
+
+
+ND-hebcal-NAME = Hebcal
+ND-hebcal-ICON = Weather
+
+ST-hebcal-ST-NAME = Current Date
+
+ND-hebcalcontroll-NAME = Hebcal Controller
+ND-hebcalcontroll-ICON = GenericCtl
+
+ST-hebcalcontroll-ST-NAME = Status
+
+CMD-hebcalcontroll-discover-NAME = Discover
+CMD-hebcalcontroll-x_query-NAME = Query
+NLSIX_CTL_BOOL-0 = Disconnected
+NLSIX_CTL_BOOL-1 = Connected

@@ -1,0 +1,49 @@
+{
+    "plugin": {
+          "name":"hebcal",
+          "description":"Hebrew Calendar AI Companion",
+          "publisher":"UD",
+          "language": "python3",
+          "executableName":"hebcal.py",
+          "installScript":"install.sh",
+          "documentationLink":"docs",
+          "licenseLink":"lic",
+          "shortPoll":60,
+          "longPoll":600,
+          "profileVersion":"3.0.0",
+          "initialLogLevel":"DEBUG",
+          "enableDiscovery":false,
+          "enableOAUTH2":false,
+          "worksOnPolisy":true,
+          "worksOnEisy":true,
+          "requiresIoXAccess": false,
+          "requirements": [],
+          "version": "1.0.0"
+    },
+    "editors": [
+    ],
+    "nodedefs": [
+        {
+            "id":"hebcal",
+            "name":"Hebcal",
+            "icon":"Weather",
+            "properties": [
+                {
+                    "id":"ST",
+                    "name": "Current Date",
+                    "editor": {
+                        "id": "CURRDATE",
+                        "uom": "Text | 145",
+                        "max": 0,
+                        "min": 0
+                    },
+                    "is_settable": false
+                }
+            ],
+            "commands": {
+                "accepts": [],
+                "sends": []
+            } 
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+<editors><editor id="CURRDATE">
+<range uom="145" min="0" max="0"/>
+</editor>
+<editor id="CTL_BOOL">
+<range uom="25" min="0" max="1" nls="NLSIX_CTL_BOOL"/>
+</editor>
+</editors>

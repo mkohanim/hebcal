@@ -1,0 +1,24 @@
+<nodedefs>
+
+<nodedef id="hebcal" nls="hebcal">
+<sts>
+<st id="ST" editor="CURRDATE" />
+</sts>
+<cmds>
+<sends/>
+<accepts/>
+</cmds>
+</nodedef>
+<nodedef id="hebcalcontroll" nls="hebcalcontroll">
+<sts>
+<st id="ST" editor="CTL_BOOL" />
+</sts>
+<cmds>
+<sends/>
+<accepts>
+<cmd id="discover"/>
+<cmd id="x_query"/>
+</accepts>
+</cmds>
+</nodedef>
+</nodedefs>

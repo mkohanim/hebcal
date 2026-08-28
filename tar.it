@@ -1,0 +1,3 @@
+#!/bin/sh
+version=$(cat version.py | awk -F'=' '{print $2'}| sed 's/\"//g')
+tar -czvf hebcal-${version}.pro.tar.gz version.py HebcalControllerNode.py HebcalNode.py LICENSE POLYGLOT_CONFIG.md README.md ai hebcal.iox_plugin.json hebcal.py install.sh profile requirements.txt 

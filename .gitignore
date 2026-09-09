@@ -1,0 +1,4 @@
+logs/
+__paycache__/
+*.pid
+**.lock

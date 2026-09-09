@@ -1,14 +1,4 @@
 <nodedefs>
-
-<nodedef id="hebcal" nls="hebcal">
-<sts>
-<st id="ST" editor="CURRDATE" />
-</sts>
-<cmds>
-<sends/>
-<accepts/>
-</cmds>
-</nodedef>
 <nodedef id="hebcalcontroll" nls="hebcalcontroll">
 <sts>
 <st id="ST" editor="CTL_BOOL" />

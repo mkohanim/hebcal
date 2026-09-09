@@ -1,4 +1,9 @@
 logs/
 __paycache__/
-*.pid
+**.pid
 **.lock
+.iox_env
+*.cert
+*.key
+
+

@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "eisyai",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "hebcal.py",
+            "console": "integratedTerminal",
+            "envFile": "/home/admin/workspace/hebcal/.iox_env",
+            "justMyCode": false
+        }
+    ]
+}

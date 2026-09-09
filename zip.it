@@ -1,0 +1,21 @@
+#!/bin/sh
+version=$(cat version.py | awk -F'=' '{print $2}' | sed 's/\"//g')
+
+zip -r eisyai-${version}.zip \
+EisyaiControllerNode.py \
+LICENSE \
+POLYGLOT_CONFIG.md \
+README.md \
+eisyai.iox_plugin.json \
+eisyai.py \
+install.sh \
+profile \
+provider_map.json \
+provider_map.py \
+requirements.txt \
+constraints.txt \
+runtime_config.anthropic.json \
+runtime_config.grok.json \
+runtime_config.openai.json \
+start_eisyai.py \
+version.py

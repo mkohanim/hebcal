@@ -16,16 +16,14 @@ import asyncio
 DATA_PATH='./data'
 HEBCAL_BASE_URL = "https://www.hebcal.com/hebcal"
 HEBCAL_CONVERTER_URL = "https://www.hebcal.com/converter"
-from HebcalNode import HebcalNode
 class HebcalControllerNode(udi_interface.Node):
     id = 'hebcalcontroll'
     """This is a list of properties that were defined in the nodedef"""
     drivers = [{'driver': 'ST', 'value': 0, 'uom': 25, 'name': 'Status'}]
-    children = [{'node_class': 'HebcalNode', 'id': 'hebcal', 'name':
-        'Hebcal', 'parent': 'hebcalcontroll'}]
+    children = []
 
     def __init__(self, polyglot, plugin, controller='hebcalcontroll',
-        address='hebcalcontroll', name='Hebcal Controller'):
+        address='hebcalcontroll', name='Hebrew Calendar'):
         super().__init__(polyglot, controller, address, name)
         self.plugin = plugin
         self.Parameters = Custom(polyglot, 'customparams')
